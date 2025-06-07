@@ -1,0 +1,18 @@
+.createTodoField {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  margin-bottom: 1rem; 
+  border-radius: 1rem; 
+  background-color: #3f3f46; 
+  padding: 1.25rem; 
+  width: 100%;
+}
+
+.todoInput {
+  background-color: transparent; 
+  border: none; 
+  outline: none; 
+  color: #ffffff; 
+  width: 100%; 
+}

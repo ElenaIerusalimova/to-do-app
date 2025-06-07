@@ -1,9 +1,9 @@
-import React from 'react';
+import styles from './Layout.module.css';
 
-const Layout = ({ children }) => {
-  return <div className='py-10 bg-gray-900 h-screen text-white'>
-    {children} 
-  </div>;
-};
+const Layout = ({ children }) => (
+  <div className={styles.layout}>
+    {children}
+  </div>
+);
 
 export default Layout;

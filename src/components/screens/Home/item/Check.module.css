@@ -1,0 +1,19 @@
+.checkbox {
+  border-width: 2px;
+  border-radius: 0.5rem; 
+  border-color: #f472b6; 
+  width: 1.5rem; 
+  height: 1.5rem; 
+  margin-right: 0.75rem; 
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.completed {
+  background-color: #f472b6; 
+}
+
+.checkIcon {
+  color: #111827; 
+}

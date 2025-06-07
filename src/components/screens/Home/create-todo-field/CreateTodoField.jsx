@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './CreateTodoField.module.css'
 
 const CreateTodoField = ({ addTodo }) => {
   const [title, setTitle] = useState('');
@@ -11,14 +12,14 @@ const CreateTodoField = ({ addTodo }) => {
   };
 
   return (
-    <div className='flex items-center justify-between mb-4 rounded-2xl bg-zinc-800 p-5 w-full'>
+    <div className={styles.createTodoField}>
       <input
         type="text"
         onChange={e => setTitle(e.target.value)}
         value={title}
-        onKeyDown={handleKeyDown} 
+        onKeyDown={handleKeyDown}
         placeholder="Add new todo"
-        className="bg-transparent border-none outline-none text-white w-full"
+        className={styles.todoInput} 
       />
     </div>
   );

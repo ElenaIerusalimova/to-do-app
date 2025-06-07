@@ -1,38 +1,26 @@
 import React, { useState } from "react";
 import Todoitem from "./item/Todoitem";
 import CreateTodoField from "./create-todo-field/CreateTodoField";
-
-const data = [
-    {
-        _id: 'kdjfb',
-        title: 'Finish the essay collab',
-        isCompleted: false,
-    },
-    {
-        _id: 'kfjhs',
-        title: 'Read the book',
-        isCompleted: false,
-    },
-    {
-        _id: 'lsjfb',
-        title: 'Write a letter',
-        isCompleted: false,
-    },
-];
+import { defaultValue } from "./constants";
+import styles from './Home.module.css';
 
 const Home = () => {
-  const [todos, setTodos] = useState(data);
-
+  const [todos, setTodos] = useState(defaultValue);
+ 
   const changeTodo = (id) => {
     const copy = [...todos];
     const current = copy.find(t => t._id === id);
     if (current) {
+      //removeTodo(id);
       current.isCompleted = !current.isCompleted;
       setTodos(copy);
     }
   };
 
-  const removeTodo = (id) => setTodos(todos.filter(t => t._id !== id));
+  const removeTodo = (id) => {
+    console.log('remove id', id);
+    setTodos(todos.filter(t => t._id !== id));
+  }
 
   const addTodo = (title) => {
     if (title.trim() !== '') {
@@ -47,10 +35,17 @@ const Home = () => {
     }
   };
 
+  console.log('todos', todos);
+
+  // if (!data || !data.length) {
+  //   return (<>
+  //     Empty list
+  //   </>)
+  // }
   return (
-    <div className='text-white w-4/5 mx-auto'>
-      <h1 className="text-2xl font-bold text-center mb-10">To Do</h1>
-      <CreateTodoField addTodo={addTodo} /> 
+    <div className={styles.todoContainer}> 
+      <h1 className={styles.todoTitle}>To Do</h1> 
+      <CreateTodoField addTodo={addTodo} />
       {todos.map(todo => (
         <Todoitem
           key={todo._id}
