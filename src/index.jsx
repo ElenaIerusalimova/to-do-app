@@ -4,6 +4,7 @@ import './index.css';
 import Home from './components/screens/Home/Home';
 import Layout from './Layout/Layout'
 import { BrowserRouter, Route, Routes } from "react-router";
+import Entrance from './components/screens/Entrance/Entrance.jsx';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +15,7 @@ root.render(
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/shop" element={<>Shop</>} />
+          <Route path="/entrance" element={<Entrance />} />
         </Routes>
       </Layout>  
     </BrowserRouter>
